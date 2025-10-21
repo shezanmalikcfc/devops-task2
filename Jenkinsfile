@@ -31,7 +31,7 @@ pipeline {
 
   post {
     always {
-      sh "mkdir -p build && echo 'Build at $(date)' > build/info.txt"
+      sh 'mkdir -p build && date > build/info.txt'
       archiveArtifacts artifacts: "build/**", fingerprint: true
     }
   }
